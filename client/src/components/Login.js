@@ -21,9 +21,8 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Container from "@mui/material/Container";
 // import { loginUser } from '../utils/API';
 
-import { teal, indigo } from "@mui/material/colors";
+import { teal } from "@mui/material/colors";
 const secondaryLight = teal[200];
-const primary = indigo[500];
 
 const LoginUser = () => {
   const [userFormData, setUserFormData] = useState({ email: "", password: "" });
@@ -38,8 +37,6 @@ const LoginUser = () => {
       setShowAlert(false);
     }
   }, [error]);
-
-  //   const [showAlert, setShowAlert] = useState(f
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -118,62 +115,7 @@ const LoginUser = () => {
                 </Grid>
                 &nbsp;
                 <Grid item>
-                  {/* {data ? (
-                                        <p>
-                                            Success! You may now head{' '}
-                                            <Link to="/">back to the homepage.</Link>
-                                        </p>
-                                    ) : ( */}
-                  <form validated={validated} onSubmit={handleFormSubmit}>
-                    {/* <Alert
-                                            dismissible
-                                            onClose={() => setShowAlert(false)}
-                                            show={showAlert}
-                                            variant="danger"
-                                        >
-                                            Something went wrong with your login credentials!
-                                        </Alert> */}
-                    {/* <Grid container direction="column" spacing={2}> */}
-                    {/* <Grid item> */}
-                    {/* <TextField sx={{
-                                                        color: primary
-                                                    }}
-                                                        type="email"
-                                                        placeholder="Email"
-                                                        fullWidth
-                                                        name="email"
-                                                        variant="outlined"
-                                                        value={userFormData.email}
-                                                        onChange={handleChange}
-                                                        required
-                                                        autoFocus
-                                                    />
-                                                </Grid>
-                                                <Grid item>
-                                                    <TextField
-                                                        sx={{
-                                                            color: primary
-                                                        }}
-                                                        type="password"
-                                                        placeholder="Password"
-                                                        fullWidth
-                                                        name="password"
-                                                        variant="outlined"
-                                                        onChange={handleInputChange}
-                                                        required
-                                                    />
-                                                </Grid> */}
-                    {/* <Grid item>
-                                                    <Button
-                                                        variant="contained"
-                                                        color="primary"
-                                                        type="submit"
-                                                        className="button-block"
-                                                    >
-                                                        Submit
-                                                    </Button>
-                                                </Grid>// */}
-                    {/* </Grid> */}
+                  <form  validated={validated} onSubmit={handleFormSubmit}>
                     <input
                       className="form-input"
                       placeholder="Your email"

@@ -21,10 +21,8 @@ import Photographers from "./Photographers";
 import { useQuery } from "@apollo/client";
 import Auth from "../utils/auth";
 
-const primary = indigo[500];
 const primaryLight = indigo[200];
 const primaryDark = indigo[900];
-const secondary = teal[500];
 const secondaryLight = teal[200];
 
 const Home = () => {

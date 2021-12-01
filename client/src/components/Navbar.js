@@ -16,14 +16,9 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import LoginIcon from "@mui/icons-material/Login";
 import Link from "@mui/material/Link";
-import { teal, indigo } from "@mui/material/colors";
+import { teal } from "@mui/material/colors";
 import Auth from "../utils/auth";
 
-const primary = indigo[500];
-const primaryLight = indigo[200];
-const primaryDark = indigo[900];
-const secondary = teal[500];
-const secondaryLight = teal[200];
 const secondaryDark = teal[700];
 
 const Navbar = ({ totalItems }) => {

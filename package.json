@@ -6,6 +6,7 @@
     "node": "14.18.0",
     "npm": "8.1.4"
   },
+  "main": "server/server.js",
   "dependencies": {
     "@testing-library/jest-dom": "^5.15.1",
     "@testing-library/react": "^11.2.7",
