@@ -93,78 +93,78 @@ const secondaryLight = teal[200];
 //This needs handlers for fetch calls to delete buttons need to be pathed to page to update page
 
 const Profile = () => {
-    const { username } = useParams();
+  const { username } = useParams();
 
-    const { loading, data } = useQuery(username ? QUERY_USER : QUERY_ME, {
-        variables: { username: username },
-    });
+  const { loading, data } = useQuery(username ? QUERY_USER : QUERY_ME, {
+    variables: { username: username },
+  });
 
-    const user = data?.me || data?.user || {};
+  const user = data?.me || data?.user || {};
 
-    if (Auth.loggedIn() && Auth.getProfile().data._id === username) {
-        return <Redirect to="/profile" />;
-    }
+  if (Auth.loggedIn() && Auth.getProfile().data._id === username) {
+    return <Redirect to="/profile" />;
+  }
 
-    if (loading) {
-        return <div>Loading...</div>;
-    }
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
-    if (!user?.username) {
-        return (
-            <h4>
-                You need to be logged in to see your profile page. Use the navigation
-                links above to sign up or log in!
-            </h4>
-        );
-    }
-    // console.log(itemData)
-
+  if (!user?.username) {
     return (
-        <main>
-            <Container
-                maxWidth="xxl"
-                sx={{
-                    bgcolor: secondaryLight,
-                }}
-            >
-                <Box>
-                    <Typography
-                        component="h1"
-                        variant="h2"
-                        align="center"
-                        color="text.primary"
-                        gutterBottom
-                        paddingTop="20px"
-                        sx={{
-                            color: primaryDark,
-                        }}
-                    >
-                        {user.companyName}
-                        {/* Simply Class Photography */}
-                    </Typography>
-                    <Typography
-                        variant="h5"
-                        align="center"
-                        color="text.secondary"
-                        paragraph
-                        sx={{
-                            color: primaryDark,
-                        }}
-                    >
-                        {" "}
-                        {user.bio}
-                        &nbsp;
-                        <Typography variant="h5" color="inherit" noWrap>
-                            Reservation Fee : {user.reservationCost}
-                        </Typography>
-                    </Typography>
-                    <Stack
-                        sx={{ pt: 4 }}
-                        direction="row"
-                        spacing={2}
-                        justifyContent="center"
-                    >
-                        {/* <Button sx={{
+      <h4>
+        You need to be logged in to see your profile page. Use the navigation
+        links above to sign up or log in!
+      </h4>
+    );
+  }
+  // console.log(itemData)
+
+  return (
+    <main>
+      <Container
+        maxWidth="xxl"
+        sx={{
+          bgcolor: secondaryLight,
+        }}
+      >
+        <Box>
+          <Typography
+            component="h1"
+            variant="h2"
+            align="center"
+            color="text.primary"
+            gutterBottom
+            paddingTop="20px"
+            sx={{
+              color: primaryDark,
+            }}
+          >
+            {user.companyName}
+            {/* Simply Class Photography */}
+          </Typography>
+          <Typography
+            variant="h5"
+            align="center"
+            color="text.secondary"
+            paragraph
+            sx={{
+              color: primaryDark,
+            }}
+          >
+            {" "}
+            {user.bio}
+            &nbsp;
+            <Typography variant="h5" color="inherit" noWrap>
+              Reservation Fee : {user.reservationCost}
+            </Typography>
+          </Typography>
+          <Stack
+            sx={{ pt: 4 }}
+            direction="row"
+            spacing={2}
+            justifyContent="center"
+          >
+            {/* <Button sx={{
                             bgcolor: primaryLight,
                             color: primaryDark,
                             border: primaryDark,
@@ -172,69 +172,52 @@ const Profile = () => {
                             borderWidth: "1px",
                         }} href="/update"
                             variant="outlined">Edit the post</Button> */}
-                        <Button
-                            sx={{
-                                bgcolor: primaryDark,
-                            }}
-                            href={user.link}
-                            variant="contained"
-                        >
-                            More of my work
-                        </Button>
-                        <Button
-                            sx={{
-                                bgcolor: primaryLight,
-                                color: primaryDark,
-                                border: primaryDark,
-                                borderStyle: "solid",
-                                borderWidth: "1px",
-                            }}
-                            variant="outlined"
-                        >
-                            Connect with me
-                            {/* <Mailto email={user.email}>
+            <Button
+              sx={{
+                bgcolor: primaryDark,
+              }}
+              href={user.link}
+              variant="contained"
+            >
+              More of my work
+            </Button>
+            <Button
+              sx={{
+                bgcolor: primaryLight,
+                color: primaryDark,
+                border: primaryDark,
+                borderStyle: "solid",
+                borderWidth: "1px",
+              }}
+              variant="outlined"
+            >
+              Connect with me
+              {/* <Mailto email={user.email}>
                                 Connect with me </Mailto> */}
-                        </Button>
-                        <Button
-                            sx={{
-                                bgcolor: primaryDark
-                            }} variant="contained">Make appointment with me</Button>
-                    </Stack>
+            </Button>
+            <Button
+              sx={{
+                bgcolor: primaryDark,
+              }}
+              variant="contained"
+            >
+              Make appointment with me
+            </Button>
+          </Stack>
+        </Box>
 
-                </Box>
-
-                <Box maxWidth="lg"
-                    sx={{
-                        paddingLeft: 90,
-                        m: 5
-                    }}>
-                    <img src={user.image}></img>
-                    {/* <Carousel>
-                        {itemData.map((item) => (
-                            <div>
-                                <Card>
-                                    <CardMedia
-                                        component="img"
-                                        image={item.img}
-                                        title={item.title}
-                                    // style={{
-                                    //   height: 1000,
-                                    //   // paddingTop: "5%",
-                                    //   width: 1000,
-                                    // }}
-                                    />
-                                    <CardContent>
-                                        <Typography>{item.title}</Typography>
-                                        <Typography>{item.author}</Typography>
-                                    </CardContent>
-                                </Card>
-                            </div>
-                        ))}
-                    </Carousel> */}
-                </Box>
-            </Container>
-        </main>
-    );
+        <Box
+          maxWidth="lg"
+          sx={{
+            paddingLeft: 90,
+            m: 5,
+          }}
+        >
+          <img src={user.image}></img>
+        </Box>
+      </Container>
+    </main>
+  );
 };
 
 export default Profile;

@@ -61,7 +61,7 @@ const Navbar = ({ totalItems }) => {
       onClick={handleMobileMenuClose}
     >
       {Auth.loggedIn() ? (
-        <>
+        <div>
           <MenuItem>
             <IconButton size="large" aria-label="" color="inherit">
               <AccountCircle />
@@ -80,9 +80,9 @@ const Navbar = ({ totalItems }) => {
               </Link>
             </IconButton>
           </MenuItem>
-        </>
+        </div>
       ) : (
-        <>
+        <div>
           {" "}
           <MenuItem>
             <IconButton size="large" aria-label="" color="inherit">
@@ -104,7 +104,7 @@ const Navbar = ({ totalItems }) => {
               </Link>
             </IconButton>
           </MenuItem>
-        </>
+        </div>
       )}
     </Menu>
   );
@@ -131,7 +131,7 @@ const Navbar = ({ totalItems }) => {
               </Link>
             </Typography>
             {Auth.loggedIn() ? (
-              <>
+              <div>
                 <Box sx={{ flexGrow: 1 }} />
                 <Box sx={{ display: { xs: "none", md: "flex" } }}>
                   <IconButton size="large" aria-label="" color="inherit">
@@ -153,9 +153,9 @@ const Navbar = ({ totalItems }) => {
                     </Link>
                   </IconButton>
                 </Box>
-              </>
+              </div>
             ) : (
-              <>
+              <div>
                 <Box sx={{ flexGrow: 1 }} />
                 <Box sx={{ display: { xs: "none", md: "flex" } }}>
                   <IconButton size="large" aria-label="" color="inherit">
@@ -179,7 +179,7 @@ const Navbar = ({ totalItems }) => {
                     </Link>
                   </IconButton>
                 </Box>
-              </>
+              </div>
             )}
             <Box sx={{ display: { xs: "flex", md: "none" } }}>
               <IconButton

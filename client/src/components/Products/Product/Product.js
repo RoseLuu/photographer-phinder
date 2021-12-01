@@ -15,11 +15,7 @@ import { Link } from "react-router-dom";
 
 const Product = ({ photo, onAddToCart, categoryName }) => {
   const classes = useStyles();
-  const str = photo.name
-    .split(" ")
-    .join("")
-    .replace(/[&\!/\\#,+()$~%.'":*?<>{}]/g, "")
-    .toLowerCase();
+  const str = photo.name.split(" ").join("").toLowerCase();
   // str.split(" ").join("").toLowerCase();
   const url = `https://calendly.com/${str}`;
   console.log(url);
