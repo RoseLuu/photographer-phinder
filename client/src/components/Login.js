@@ -3,25 +3,20 @@ import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
+import Input from "@mui/material/Input";
 import {
   Grid,
   Avatar,
   Typography,
   // Link,
 } from "@material-ui/core";
-
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-// import FormControlLabel from "@material-ui/core/FormControlLabel";
-// import { useFormControl } from "@mui/material/FormControl";
-// import Checkbox from "@material-ui/core/Checkbox";
-// import { Input } from "@mui/material";
-// import { InputLabel } from "@mui/material";
-// import { FormHelperText } from "@mui/material";
-// import { FormControl } from "@mui/material";
 import Container from "@mui/material/Container";
-// import { loginUser } from '../utils/API';
+import { teal, indigo } from "@mui/material/colors";
 
-import { teal } from "@mui/material/colors";
+const primary = indigo[500];
 const secondaryLight = teal[200];
 
 const LoginUser = () => {
@@ -37,6 +32,8 @@ const LoginUser = () => {
       setShowAlert(false);
     }
   }, [error]);
+
+  //   const [showAlert, setShowAlert] = useState(f
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -115,8 +112,57 @@ const LoginUser = () => {
                 </Grid>
                 &nbsp;
                 <Grid item>
-                  <form  validated={validated} onSubmit={handleFormSubmit}>
-                    <input
+                  <form
+                    validated={validated}
+                    onSubmit={handleFormSubmit}
+                    sx={{
+                      bgcolor: primary,
+                    }}
+                  >
+                    <Grid container direction="column" spacing={2}>
+                      <Grid item>
+                        <TextField
+                          sx={{
+                            color: primary,
+                          }}
+                          type="email"
+                          placeholder="Email"
+                          fullWidth
+                          name="email"
+                          variant="outlined"
+                          defaultValue={userFormData.email}
+                          onChange={handleChange}
+                          required
+                          autoFocus
+                        />
+                      </Grid>
+                      <Grid item>
+                        <TextField
+                          sx={{
+                            color: primary,
+                          }}
+                          type="password"
+                          placeholder="Password"
+                          fullWidth
+                          name="password"
+                          defaultValue="outlined"
+                          value={userFormData.password}
+                          onChange={handleChange}
+                          required
+                        />
+                      </Grid>
+                      <Grid item>
+                        <Button
+                          variant="contained"
+                          color="primary"
+                          type="submit"
+                          className="button-block"
+                        >
+                          Submit
+                        </Button>
+                      </Grid>
+                    </Grid>
+                    {/* <input
                       className="form-input"
                       placeholder="Your email"
                       name="email"
@@ -132,13 +178,9 @@ const LoginUser = () => {
                       value={userFormData.password}
                       onChange={handleChange}
                     />
-                    <button
-                      className="btn btn-block btn-primary"
-                      style={{ cursor: "pointer" }}
-                      type="submit"
-                    >
+                    <button type="submit" className="login">
                       Submit
-                    </button>
+                    </button> */}
                   </form>
                   {/* )} */}
                 </Grid>

@@ -8,7 +8,7 @@ import Typography from "@mui/material/Typography";
 // /import Carousel from "react-material-ui-carousel";
 // import CarouselSlide from "react-material-ui-carousel";
 import { teal, indigo } from "@mui/material/colors";
-
+import { Link } from "react-router-dom";
 // import React from 'react';
 
 import { Redirect, useParams } from "react-router-dom";
@@ -102,7 +102,7 @@ const Profile = () => {
                             borderWidth: "1px",
                         }} href="/update"
                             variant="outlined">Edit the post</Button> */}
-            <Button
+            {/* <Button
               sx={{
                 bgcolor: primaryDark,
               }}
@@ -110,7 +110,7 @@ const Profile = () => {
               variant="contained"
             >
               More of my work
-            </Button>
+            </Button> */}
             <Button
               sx={{
                 bgcolor: primaryLight,
@@ -119,17 +119,22 @@ const Profile = () => {
                 borderStyle: "solid",
                 borderWidth: "1px",
               }}
+              href={user.link}
+              target="_blank"
               variant="outlined"
             >
               Connect with me
-              {/* <Mailto email={user.email}>
-                                Connect with me </Mailto> */}
             </Button>
             <Button
               sx={{
                 bgcolor: primaryDark,
               }}
               variant="contained"
+              component={Link}
+              target="_blank"
+              to={{
+                pathname: `https://calendly.com/${user.companyName}`,
+              }}
             >
               Make appointment with me
             </Button>
