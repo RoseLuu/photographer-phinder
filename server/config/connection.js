@@ -4,8 +4,8 @@ mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/photophinder",
   {
     useNewUrlParser: true,
-    useUnifiedTopology: true,
     useCreateIndex: true,
+    useUnifiedTopology: true,
     useFindAndModify: false,
   }
 );
