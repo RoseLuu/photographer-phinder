@@ -144,11 +144,16 @@ const Profile = () => {
         <Box
           maxWidth="lg"
           sx={{
-            paddingLeft: 90,
-            m: 5,
+            display: "flex",
+            justifyContent: "center",
+            marginLeft: 12,
           }}
         >
-          <img src={user.image}></img>
+          <img
+            className="profileImg"
+            src={user.image}
+            alt="Image from Photographer"
+          ></img>
         </Box>
       </Container>
     </main>
