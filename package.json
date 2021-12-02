@@ -1,6 +1,6 @@
 {
   "name": "photophinder2",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "engines": {
     "node": "14.18.0",
@@ -30,5 +30,8 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^5.1.0"
+  },
+  "dependencies": {
+    "apollo-server-express": "^2.15.0"
   }
 }
